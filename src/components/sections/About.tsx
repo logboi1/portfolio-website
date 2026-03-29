@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/common/AnimatedSection";
 import PageTransition from "@/components/common/PageTransition";
 import { aboutMe, personalInfo } from "@/lib/data";
 import SkillsSection from "@/components/sections/Skills";
+import { withBasePath } from "@/lib/utils";
 
 export default function AboutPage() {
   return (
@@ -31,7 +32,7 @@ export default function AboutPage() {
                 <CardContent className="p-0">
                   <div className="aspect-square relative">
                     <Image
-                      src="/profile.jpg"
+                      src={withBasePath("/profile.jpg")}
                       alt={personalInfo.name}
                       fill
                       className="object-cover"

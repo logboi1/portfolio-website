@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     creator: "@ibraheemogunde2",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: `${SITE_CONFIG.url}/favicon.ico`,
   },
 };
 

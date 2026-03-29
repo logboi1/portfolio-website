@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import type { Project } from "@/types";
+import { withBasePath } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
@@ -24,7 +25,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
         <div className="relative overflow-hidden">
           <Image
-            src={project.image}
+            src={withBasePath(project.image)}
             alt={project.title}
             width={400}
             height={250}

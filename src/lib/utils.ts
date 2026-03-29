@@ -18,3 +18,12 @@ export function calculateReadingTime(text: string): number {
   const words = text.split(" ").length;
   return Math.ceil(words / wordsPerMinute);
 }
+
+export function withBasePath(path: string): string {
+  if (!path.startsWith("/")) {
+    return path;
+  }
+
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  return `${basePath}${path}`;
+}

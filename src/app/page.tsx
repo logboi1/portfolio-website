@@ -8,6 +8,7 @@ import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import AnimatedSection from "@/components/common/AnimatedSection";
 import { personalInfo } from "@/lib/data";
+import { withBasePath } from "@/lib/utils";
 
 export default function HomePage() {
   const featuredProjects = projects
@@ -58,7 +59,7 @@ export default function HomePage() {
               >
                 <div className="relative overflow-hidden">
                   <Image
-                    src={project.image}
+                    src={withBasePath(project.image)}
                     alt={project.title}
                     width={400}
                     height={250}
