@@ -10,8 +10,8 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <div className="flex flex-col items-center space-y-2 md:items-start">
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
-                reserved.
+                Copyright {new Date().getFullYear()} {SITE_CONFIG.name}. All
+                rights reserved.
               </p>
               <p className="text-xs text-muted-foreground">
                 Built with Next.js, TypeScript & Tailwind CSS

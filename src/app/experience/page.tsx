@@ -7,7 +7,7 @@ import { experiences } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "My professional journey and work experience in frontend development.",
+    "My professional journey building frontend products, mobile apps, and backend-integrated solutions.",
 };
 
 export default function ExperiencePage() {
@@ -25,7 +25,8 @@ export default function ExperiencePage() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               My professional journey through various roles and projects that
-              have shaped my expertise in frontend development.
+              have shaped my expertise in frontend engineering, API
+              integrations, and product delivery.
             </p>
           </AnimatedSection>
 

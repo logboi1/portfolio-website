@@ -1,7 +1,7 @@
 "use client";
 // import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import ProjectCard from "@/components/cards/ProjectCard";
 import AnimatedSection from "@/components/common/AnimatedSection";
 import PageTransition from "@/components/common/PageTransition";
@@ -40,8 +40,9 @@ function ProjectsClient() {
               My Projects
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              A collection of projects that showcase my skills in frontend
-              development, UI/UX design, and modern web technologies.
+              A collection of projects that showcase my frontend engineering,
+              mobile app work, backend integrations, and modern web
+              technologies.
             </p>
           </AnimatedSection>
 
@@ -112,7 +113,7 @@ function ProjectsClient() {
                 projects. Feel free to reach out!`}
               </p>
               <Button asChild size="lg">
-                <a href="/contact">Get In Touch</a>
+                <Link href="/contact">Get In Touch</Link>
               </Button>
             </div>
           </AnimatedSection>

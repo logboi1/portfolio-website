@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "@/components/common/AnimatedSection";
 import PageTransition from "@/components/common/PageTransition";
 import { blogPosts } from "@/lib/data";
+import { SITE_CONFIG } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -22,18 +23,16 @@ export default function BlogPage() {
     <PageTransition>
       <div className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
           <AnimatedSection className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
               Blog
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Sharing my thoughts, tutorials, and insights about web
-              development, technology trends, and everything in between.
+              development, technology trends, and product engineering.
             </p>
           </AnimatedSection>
 
-          {/* Featured Post */}
           {featuredPost && (
             <AnimatedSection delay={0.1} className="mb-16">
               <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -77,19 +76,18 @@ export default function BlogPage() {
                     href={`/blog/${featuredPost.id}`}
                     className="text-primary hover:underline font-medium"
                   >
-                    Read more →
+                    Read article
                   </Link>
                 </CardContent>
               </Card>
             </AnimatedSection>
           )}
 
-          {/* Other Posts */}
           {otherPosts.length > 0 && (
             <AnimatedSection delay={0.2}>
               <h2 className="text-2xl font-bold mb-8">Recent Posts</h2>
               <div className="grid md:grid-cols-2 gap-8">
-                {otherPosts.map((post, index) => (
+                {otherPosts.map((post) => (
                   <Card
                     key={post.id}
                     className="group hover:shadow-lg transition-all duration-300"
@@ -132,7 +130,7 @@ export default function BlogPage() {
                         href={`/blog/${post.id}`}
                         className="text-primary hover:underline text-sm font-medium"
                       >
-                        Read more →
+                        Read article
                       </Link>
                     </CardContent>
                   </Card>
@@ -141,7 +139,6 @@ export default function BlogPage() {
             </AnimatedSection>
           )}
 
-          {/* CTA */}
           <AnimatedSection delay={0.3} className="text-center mt-16">
             <div className="bg-secondary/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
@@ -156,12 +153,12 @@ export default function BlogPage() {
                   </button>
                 </Link>
                 <Link
-                  href="https://twitter.com/johndoe"
+                  href={SITE_CONFIG.links.twitter}
                   target="_blank"
                   className="inline-block"
                 >
                   <button className="border border-border hover:bg-accent px-6 py-2 rounded-md transition-colors">
-                    Follow on Twitter
+                    Follow on X
                   </button>
                 </Link>
               </div>

@@ -9,16 +9,22 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.url),
   title: {
     default: `${SITE_CONFIG.name} - ${SITE_CONFIG.title}`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
   keywords: [
-    "Frontend Developer",
+    "Frontend Engineer",
+    "Backend Integrations",
     "React",
     "Next.js",
     "TypeScript",
+    "Node.js",
+    "Express.js",
+    "React Native",
+    "Fintech",
     "JavaScript",
     "Web Development",
     "UI/UX",
@@ -42,14 +48,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_CONFIG.name} - ${SITE_CONFIG.title}`,
     description: SITE_CONFIG.description,
-    creator: "@johndoe",
+    creator: "@ibraheemogunde2",
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
-  manifest: `${SITE_CONFIG.url}/site.webmanifest`,
 };
 
 export default function RootLayout({

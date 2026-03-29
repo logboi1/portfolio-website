@@ -9,13 +9,14 @@ import { blogPosts } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
 interface BlogPostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.id === params.slug);
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.id === slug);
 
   if (!post) {
     return { title: "Post Not Found" };
@@ -33,12 +34,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((p) => p.id === params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.id === slug);
 
   if (!post) {
     notFound();
   }
+
+  const paragraphs = post.content.split("\n\n");
 
   return (
     <PageTransition>
@@ -84,39 +88,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="prose prose-lg max-w-none dark:prose-invert">
-            {/* In a real implementation, you would render the markdown content here */}
-            <p>
-              This is where the full blog post content would be rendered. In a
-              real implementation, you would use a markdown parser like
-              `react-markdown` or `mdx-bundler` to render the post content from
-              markdown files.
-            </p>
-
-            <p>
-              The blog post content could include code examples, images, and
-              other rich media. You would typically store your blog posts as
-              markdown files in a `content` directory or use a headless CMS like
-              Contentful or Sanity.
-            </p>
-
-            <h2>Example Code Block</h2>
-            <pre>
-              <code>
-                {`const example = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  )
-}`}
-              </code>
-            </pre>
-
-            <p>
-              This is just placeholder content to demonstrate the layout and
-              styling. Replace this with your actual blog post content parsing
-              logic.
-            </p>
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </article>

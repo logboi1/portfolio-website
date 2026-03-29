@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "@/components/common/AnimatedSection";
 import PageTransition from "@/components/common/PageTransition";
-import { aboutMe, personalInfo, skills } from "@/lib/data";
+import { aboutMe, personalInfo } from "@/lib/data";
 import SkillsSection from "@/components/sections/Skills";
-
-export const metadata: Metadata = {
-  title: "About Me",
-  description:
-    "Learn more about my background, experience, and passion for frontend development.",
-};
 
 export default function AboutPage() {
   return (
@@ -25,7 +18,8 @@ export default function AboutPage() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Get to know more about my journey, skills, and what drives my
-              passion for creating amazing web experiences.
+              passion for building reliable products across frontend, mobile,
+              and backend-integrated experiences.
             </p>
           </AnimatedSection>
 

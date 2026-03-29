@@ -1,13 +1,13 @@
 export const SITE_CONFIG = {
   name: "Ibraheem Abiola Ogundele",
-  title: "Senior Frontend Engineer",
+  title: "Senior Frontend Engineer with Backend Experience",
   description:
-    "Enthusiastic and detail-oriented Frontend Engineer with 5+ years of experience building scalable, enterprise-grade web and mobile applications.",
-  url: "https://ibraheemogundele.dev", // Update with your domain
+    "Senior frontend engineer with 5+ years of experience building scalable web and mobile products, plus hands-on backend work with Node.js, Express, Prisma, and API integrations.",
+  url: "https://logboi1.github.io/portfolio-website",
   links: {
     github: "https://github.com/logboi1",
     linkedin: "https://www.linkedin.com/in/ibraheem-ogundele",
-    twitter: "https://twitter.com/ibraheemogunde2", // Add your Twitter if you have one
+    twitter: "https://twitter.com/ibraheemogunde2",
     email: "ogundeleibraheem@gmail.com",
   },
 } as const;

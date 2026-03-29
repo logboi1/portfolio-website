@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
@@ -24,9 +23,8 @@ import { personalInfo } from "@/lib/data";
 import type { ContactForm } from "@/types";
 import Link from "next/link";
 
-// Note: In a real implementation, you would use a service like EmailJS or a backend API
 function ContactPageClient() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isOpeningDraft, setIsOpeningDraft] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const {
@@ -36,23 +34,24 @@ function ContactPageClient() {
     formState: { errors },
   } = useForm<ContactForm>();
 
-  const onSubmit = async (data: ContactForm) => {
-    setIsSubmitting(true);
+  const onSubmit = (data: ContactForm) => {
+    setIsOpeningDraft(true);
 
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    const subject = encodeURIComponent(data.subject);
+    const body = encodeURIComponent(
+      `Hi Ibraheem,
 
-      // In a real implementation, you would send the data to your backend
-      console.log("Contact form data:", data);
+Name: ${data.name}
+Email: ${data.email}
 
-      setIsSubmitted(true);
-      reset();
-    } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+${data.message}`
+    );
+
+    window.location.href = `mailto:${SITE_CONFIG.links.email}?subject=${subject}&body=${body}`;
+
+    setIsSubmitted(true);
+    setIsOpeningDraft(false);
+    reset();
   };
 
   const contactInfo = [
@@ -71,8 +70,8 @@ function ContactPageClient() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+234 810 901 9750",
+      href: "tel:+2348109019750",
     },
   ];
 
@@ -188,11 +187,12 @@ function ContactPageClient() {
                         <Send className="h-8 w-8 text-green-600 dark:text-green-400" />
                       </div>
                       <h3 className="text-xl font-semibold mb-2">
-                        Message Sent!
+                        Email Draft Ready
                       </h3>
                       <p className="text-muted-foreground mb-6">
-                        {` Thanks for reaching out! I'll get back to you as soon as
-                        possible.`}
+                        {` Your email app should open with a drafted message to me.
+                        If it doesn't, you can still reach me directly with the
+                        contact details on this page.`}
                       </p>
                       <Button
                         onClick={() => setIsSubmitted(false)}
@@ -211,7 +211,7 @@ function ContactPageClient() {
                           Send Me a Message
                         </h2>
                         <p className="text-muted-foreground">
-                          {`I'll respond within 24 hours.`}
+                          {`This opens your email app with a pre-filled draft.`}
                         </p>
                       </div>
 
@@ -290,17 +290,17 @@ function ContactPageClient() {
                       <Button
                         type="submit"
                         className="w-full"
-                        disabled={isSubmitting}
+                        disabled={isOpeningDraft}
                       >
-                        {isSubmitting ? (
+                        {isOpeningDraft ? (
                           <div className="flex items-center">
                             <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
-                            Sending...
+                            Opening draft...
                           </div>
                         ) : (
                           <div className="flex items-center">
                             <Send className="h-4 w-4 mr-2" />
-                            Send Message
+                            Draft Email
                           </div>
                         )}
                       </Button>

@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "Event management application for Google Developer Group DevFest with scheduling features.",
     longDescription:
       "Developed a React Native mobile application for GDG DevFest event scheduling and management. Integrated with Firebase for real-time updates and Node.js backend for event data management. Features include session scheduling, speaker profiles, venue maps, and push notifications for event updates.",
-    image: "/projects/devfest.jpg",
+    image: "/projects/devfestavatar.png",
     technologies: ["React Native", "Node.js", "Firebase", "REST APIs"],
     githubUrl: "https://github.com/logboi1/Devfest_Timeline",
     liveUrl: "",
@@ -385,9 +385,10 @@ export const blogPosts: BlogPost[] = [
     id: "1",
     title: "Building Scalable Fintech Applications with React and TypeScript",
     excerpt:
-      "Learn the best practices and architectural patterns for building secure and scalable fintech applications using React and TypeScript.",
-    content: "Content for the blog post would go here...",
-    publishedAt: "2024-10-01",
+      "A practical look at how I approach fintech interfaces, transaction states, and reliable API integrations with React and TypeScript.",
+    content:
+      "One thing fintech work teaches quickly is that clean UI alone is not enough. A payment flow has to communicate trust, handle edge cases clearly, and stay stable when the API is under pressure. Before I build screens, I map the transaction journey in detail so loading states, retries, reversals, and failures are all designed on purpose.\n\nReact and TypeScript make it easier to keep those flows predictable because they force clarity in state handling and API responses. I also pay close attention to how the frontend and backend meet, especially around validation, idempotent actions, and audit-friendly data structures. Those small engineering decisions save a lot of pain later.\n\nThe strongest fintech products usually come from cross-team discipline. Product, design, frontend, backend, and QA all shape the final reliability of the experience, and I enjoy helping connect those pieces into something users can trust.",
+    publishedAt: "2026-03-26",
     tags: ["React", "TypeScript", "Fintech", "Architecture"],
     readingTime: 8,
   },
@@ -396,9 +397,10 @@ export const blogPosts: BlogPost[] = [
     title:
       "React Native vs Flutter: Choosing the Right Framework for Mobile Apps",
     excerpt:
-      "A comprehensive comparison of React Native and Flutter based on real-world project experience, covering performance, development speed, and community support.",
-    content: "Content for the blog post would go here...",
-    publishedAt: "2024-09-15",
+      "How I think through the React Native versus Flutter decision when a team needs to move fast without creating long-term maintenance problems.",
+    content:
+      "Framework decisions become much easier when you stop asking which option is universally better and start asking which one fits the team that will actually maintain the product. When a company already has strong JavaScript or TypeScript experience, React Native often gives a faster route to delivery because the tooling and mental model already feel familiar.\n\nFlutter is a strong option when visual consistency is the priority and the team is comfortable investing in Dart for the long haul. I usually lean toward React Native when collaboration with web engineers matters, release speed is important, and shared product thinking across platforms is more valuable than a perfectly controlled rendering layer.\n\nFor real client work, the best choice is the one the team can still support confidently months after launch. A stable architecture, realistic roadmap, and disciplined releases matter far more than choosing the trendiest framework.",
+    publishedAt: "2026-03-14",
     tags: ["React Native", "Flutter", "Mobile Development", "Comparison"],
     readingTime: 6,
   },
@@ -406,9 +408,10 @@ export const blogPosts: BlogPost[] = [
     id: "3",
     title: "Optimizing React Applications for High-Volume Traffic",
     excerpt:
-      "Practical techniques for optimizing React applications to handle high-volume user traffic, including code splitting, lazy loading, and caching strategies.",
-    content: "Content for the blog post would go here...",
-    publishedAt: "2024-08-20",
+      "The performance habits I rely on when React applications need to stay fast under heavy usage and data-rich workflows.",
+    content:
+      "Performance work gets better when it starts with measurement instead of guesswork. I normally begin by looking at load time, interaction delay, API latency, and the screens where users feel the most friction. That gives me a clearer path than trying random tweaks and hoping one of them helps.\n\nIn React applications, the fastest wins often come from reducing what ships on first load, structuring data requests more intentionally, and avoiding unnecessary renders. Code splitting, lighter media, better caching, and clear loading states can make an app feel dramatically smoother even before deeper optimization work begins.\n\nI also think performance is a shared responsibility. Frontend choices matter, but backend response times, API design, and review culture usually decide whether a product stays fast as usage grows.",
+    publishedAt: "2026-02-28",
     tags: ["React", "Performance", "Optimization", "Best Practices"],
     readingTime: 7,
   },
@@ -417,13 +420,13 @@ export const blogPosts: BlogPost[] = [
 // Personal information
 export const personalInfo = {
   name: "Ibraheem Abiola Ogundele",
-  title: "Senior Frontend Engineer",
+  title: "Senior Frontend Engineer with Backend Experience",
   location: "Ado Ekiti, Ekiti State, Nigeria",
-  bio: "Enthusiastic and detail-oriented Frontend Engineer with 5+ years of experience building scalable, enterprise-grade web and mobile applications. Skilled in React.js and modern frameworks including Next.js, with proven expertise in delivering fintech and enterprise solutions.",
+  bio: "Senior frontend engineer with 5+ years of experience building scalable web and mobile applications. I specialize in polished product interfaces with React and Next.js, and I also support delivery with backend integrations, Node.js services, and API-driven workflows when needed.",
   resume: "/resume.pdf",
   stats: {
     yearsExperience: "5+",
-    projectsCompleted: "30+",
+    projectsCompleted: "15+",
     usersImpacted: "50K+",
     linesOfCode: "100K+",
   },
@@ -431,13 +434,14 @@ export const personalInfo = {
 
 export const aboutMe = {
   intro:
-    "Hi! I'm Ibraheem, a passionate Senior Frontend Engineer based in Nigeria. I specialize in building enterprise-grade web and mobile applications with a focus on fintech solutions and scalable architectures.",
+    "Hi! I'm Ibraheem, a senior frontend engineer based in Nigeria who builds fast, reliable web and mobile products and also contributes on the backend when a project needs API work or service integration.",
   story:
-    "My journey into software development began during my polytechnic education, where I discovered my passion for creating digital solutions that solve real-world problems. Over the past 5+ years, I've had the privilege of working on diverse projects ranging from fintech platforms to enterprise management systems, always striving to deliver high-quality, performant applications. I particularly enjoy working with React ecosystem and have led teams in delivering mission-critical applications for organizations like the Nigerian Shippers Council.",
+    "My journey into software development began during my polytechnic education, where I discovered how much I enjoy building digital solutions that solve real business problems. Over the past 5+ years, I have worked on fintech products, internal platforms, and enterprise systems, leading frontend delivery while collaborating closely on API design, backend integrations, and release quality. I enjoy turning complex requirements into products that feel clear, fast, and dependable for the people using them every day.",
   mission:
-    "I believe in writing clean, maintainable code that not only solves business problems but also provides exceptional user experiences. My goal is to continue building impactful applications while mentoring the next generation of developers and contributing to the tech community.",
+    "I believe in writing clean, maintainable code that solves business problems and creates confidence for users. My goal is to keep building impactful products, strengthen my full product engineering range across frontend and backend collaboration, and keep helping other developers grow along the way.",
   interests: [
     "Frontend Architecture",
+    "Backend Integrations",
     "Fintech Solutions",
     "Mobile App Development",
     "Performance Optimization",
@@ -447,22 +451,8 @@ export const aboutMe = {
   funFacts: [
     "Built and scaled an application serving 30,000+ users",
     "Led frontend development for Nigerian government projects",
+    "Built backend APIs and integrations with Node.js and Express",
     "Contributed to GDG DevFest projects for 2 consecutive years",
     "Mentored multiple interns and junior developers",
   ],
-};
-
-// Update constants.ts with your information
-export const SITE_CONFIG_UPDATE = {
-  name: "Ibraheem Abiola Ogundele",
-  title: "Senior Frontend Engineer",
-  description:
-    "Enthusiastic and detail-oriented Frontend Engineer with 5+ years of experience building scalable, enterprise-grade web and mobile applications.",
-  url: "https://ibraheemogundele.dev", // Update with your domain
-  links: {
-    github: "https://github.com/logboi1",
-    linkedin: "https://www.linkedin.com/in/ibraheem-ogundele",
-    twitter: "https://twitter.com/yourusername", // Add your Twitter if you have one
-    email: "ogundeleibraheem@gmail.com",
-  },
 };
